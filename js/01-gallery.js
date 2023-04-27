@@ -22,9 +22,9 @@ if(currentItem.nodeName !== "IMG"){
 } 
 
 const instance = basicLightbox.create(
-    `<img src="${event.target.getAttribute(
+    `<img src="${currentItem.getAttribute(
       "data-source"
-    )}" alt="${event.target.getAttribute("alt")}" />`
+    )}" alt="${currentItem.getAttribute("alt")}" />`
   );
 instance.show()
 
