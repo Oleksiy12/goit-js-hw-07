@@ -1,10 +1,32 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
-// console.log(galleryItems);
 const gallery = document.querySelector(".gallery");
-console.log(gallery);
-const gallery__item = document.querySelector(".gallery__item")
-const allImg = galleryItems.forEach(item => {
-  
 
-})
+const galleryAllValue =  galleryItems.map(({preview, original, description}) =>
+`<li class ="gallery__item"
+<a class="gallery__link" href="${original}">
+<img class="gallery__image" src="${preview}" data-source="${original}" alt="${description}"/>
+</a>
+</li>`).join('');
+
+gallery.insertAdjacentHTML("beforeend", galleryAllValue);
+gallery.addEventListener("click", modalWindow);
+
+function modalWindow(event){
+event.preventDefault();
+
+const currentItem = event.target;
+
+if(currentItem.nodeName !== "IMG"){
+    return;
+} 
+
+const instance = basicLightbox.create(
+    `<img src="${event.target.getAttribute(
+      "data-source"
+    )}" alt="${event.target.getAttribute("alt")}" />`
+  );
+instance.show()
+
+    }
+    
