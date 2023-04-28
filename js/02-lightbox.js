@@ -22,10 +22,5 @@ const galleryItem = galleryItems.map(({preview, original, description}) =>
         return;
     }
 
-    const instance = basicLightbox.create(
-        `<img src="${currentItem.getAttribute(
-          "data-source"
-        )}" alt="${currentItem.getAttribute("alt")}" />`
-      );
-    instance.show()
-    }
+    let lightbox = new SimpleLightbox('.gallery.gallery__link', {captionData: "alt",  captionDelay: 250});
+  }
