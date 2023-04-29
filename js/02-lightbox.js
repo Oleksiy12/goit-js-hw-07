@@ -18,6 +18,6 @@ const galleryItem = galleryItems.map(({preview, original, description}) =>
     // if(currentItem.nodeName !== "IMG"){
     //     return;
     // }
-    const lightbox = new SimpleLightbox('.gallery .gallery__link',    
-    {captionData: "alt",  captionDelay: 250});
+    const lightbox = new SimpleLightbox(".gallery .gallery__link",    
+    {captionData: "alt", captionDelay: 250});
   }
