@@ -14,13 +14,10 @@ const galleryItem = galleryItems.map(({preview, original, description}) =>
 
     function onModalClick(event){
     event.preventDefault();
-  
-
-    const currentItem = event.target;
-
-    if(currentItem.nodeName !== "IMG"){
-        return;
-    }
-
-    let lightbox = new SimpleLightbox('.gallery.gallery__link', {captionData: "alt",  captionDelay: 250});
+    // const currentItem = event.target;
+    // if(currentItem.nodeName !== "IMG"){
+    //     return;
+    // }
+    const lightbox = new SimpleLightbox('.gallery .gallery__link',    
+    {captionData: "alt",  captionDelay: 250});
   }
